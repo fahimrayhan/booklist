@@ -1,5 +1,7 @@
 import {useContext} from 'react';
 import { BookContext } from '../context/BookList';
+import Styles from '../styles/Main.module.css';
+
 
 const BookDetails = ({book}) => {
 
@@ -7,8 +9,8 @@ const BookDetails = ({book}) => {
 
     return ( 
         <li onClick={() => dispatch({type:"DELETE_BOOK",id:book.id})}>
-            <div className="title">{book.title}</div>
-            <div className="author">{book.author}</div>
+            <div className={Styles.title}>{book.title}</div>
+            <div className={Styles.author}>{book.author}</div>
         </li>
      );
 }

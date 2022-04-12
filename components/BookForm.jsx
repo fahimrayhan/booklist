@@ -1,5 +1,6 @@
 import {useContext, useState} from 'react'
 import { BookContext } from '../context/BookList';
+import Styles from '../styles/Main.module.css';
 
 const BookForm = () => {
 
@@ -17,7 +18,7 @@ const BookForm = () => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={Styles.form}>
             <input type="text" name="title" placeholder="Book Title" required value={title} onChange={(e)=>{
                 setTitle(e.target.value) 
             }} />

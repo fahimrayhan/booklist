@@ -1,13 +1,15 @@
 import {useContext} from 'react'
 import { BookContext } from '../context/BookList';
 import BookDetails from './BookDetails';
+import Styles from '../styles/Main.module.css';
 
 const BookList = () => {
 
     const {books} = useContext(BookContext)
+    
 
     return books.length ? (
-        <div className="book-list">
+        <div className={Styles.booklist}>
             <ul>
                 {
                     books.map(book =>{
@@ -19,7 +21,7 @@ const BookList = () => {
             </ul>
         </div>
     ) : (
-        <div className="empty">No books to read. Hello free time!</div>
+        <div className={Styles.empty}>No books to read. Hello free time!</div>
     )
 }
  
